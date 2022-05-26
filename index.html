@@ -1,36 +1,45 @@
 <style>
-html{background-color:#000000;}
+@font-face{font-family:textfont;src:url(BrandonText.otf)}
+@font-face{font-family:titlefont;src:url(Cocogoose.ttf)}
+html{font-family:textfont;background-color:#000000}
 #results{background-color:#e0e0e0;border:4px solid #202020;border-radius:16px;display:block;margin:16px auto}
 </style>
 
 <body>
 <canvas id="results" width="512" height="512"></canvas>
-<img id="grid" src="grid.svg" width="512" height="512" style="display:none;">
+<img id="h3x" src="h3x.svg" style="display:none;">
+<img id="grid" src="grid.svg" style="display:none;">
 </body>
 
 <script>
 y=0
 x=0
 window.onload=function(){
-var c=document.getElementById("results");
-var ctx=c.getContext("2d");
-var hex=document.getElementById("grid");
-ctx.beginPath();
+var c=document.getElementById("results")
+var ctx=c.getContext("2d")
+var h3x=document.getElementById("h3x")
+var grid=document.getElementById("grid")
+ctx.beginPath()
 ctx.rect(0,0,512,512)
-ctx.fillStyle="#c0c0c0";
-ctx.fill();
-ctx.drawImage(hex,0,0,512,512);
-ctx.beginPath();
-ctx.arc(256,224-32*y,8,0,2*Math.PI);
-ctx.fillStyle="#ff0000";
-ctx.fill();
-ctx.beginPath();
-ctx.arc(159,392-32*y,8,0,2*Math.PI);
-ctx.fillStyle="#ff0000";
-ctx.fill();
-ctx.beginPath();
-ctx.arc(353,392-32*y,8,0,2*Math.PI);
-ctx.fillStyle="#ff0000";
-ctx.fill();
-};
+ctx.fillStyle="#c0c0c0"
+ctx.fill()
+ctx.drawImage(h3x,16,16)
+ctx.drawImage(grid,0,0,512,512)
+ctx.font="24px textfont"
+ctx.fillStyle="#000000"
+ctx.fillText("quark88.github.io/h3x",256,32)
+ctx.fillText("H3X 0.0.0",384,64)
+ctx.beginPath()
+ctx.arc(256,224-32*y,8,0,2*Math.PI)
+ctx.fillStyle="#ff0000"
+ctx.fill()
+ctx.beginPath()
+ctx.arc(159,392-32*y,8,0,2*Math.PI)
+ctx.fillStyle="#ff0000"
+ctx.fill()
+ctx.beginPath()
+ctx.arc(353,392-32*y,8,0,2*Math.PI)
+ctx.fillStyle="#ff0000"
+ctx.fill()
+}
 </script> 
