@@ -14,23 +14,27 @@
 <style>
 @font-face{font-family:textfont;src:url(BrandonText.otf)}
 @font-face{font-family:titlefont;src:url(Cocogoose.ttf)}
-html{font-family:textfont;background-color:#000000}
+html{background-color:#202020;padding:0;scroll-behavior:smooth}
+body{background-color:#101010;border-color:#000;border-bottom-width:20px;border-left:20px solid #000;border-right:20px solid #000;border-top-color:#000;border-top-width:20px;margin:0 auto;min-height:calc(100vh - 4em);padding:2em;width:80%}
 #results{background-color:#e0e0e0;border:4px solid #202020;border-radius:16px;display:block;margin:16px auto}
 </style>
 
 <body>
+<img id="h3x" src="h3x.svg" width="512" style="display:block;margin-left:auto;margin-right:auto">
+<img id="grid" src="grid.svg" style="display:none">
 <canvas id="results" width="512" height="512"></canvas>
-<img id="h3x" src="h3x.svg" style="display:none;">
-<img id="grid" src="grid.svg" style="display:none;">
 </body>
 
 <script>
-y=0
+a=0
+b=0
+c=0
 x=0
+y=0
+z=0
 window.onload=function(){
 var c=document.getElementById("results")
 var ctx=c.getContext("2d")
-var h3x=document.getElementById("h3x")
 var grid=document.getElementById("grid")
 ctx.beginPath()
 ctx.rect(0,0,512,512)
@@ -42,17 +46,14 @@ ctx.font="24px textfont"
 ctx.fillStyle="#000000"
 ctx.fillText("quark88.github.io/h3x",256,32)
 ctx.fillText("H3X 0.0.0",384,64)
+function dot(a,b,x,y){
 ctx.beginPath()
-ctx.arc(256,224-32*y,8,0,2*Math.PI)
+ctx.arc(a+32*x,b-32*y,8,0,2*Math.PI)
 ctx.fillStyle="#ff0000"
 ctx.fill()
-ctx.beginPath()
-ctx.arc(159,392-32*y,8,0,2*Math.PI)
-ctx.fillStyle="#ff0000"
-ctx.fill()
-ctx.beginPath()
-ctx.arc(353,392-32*y,8,0,2*Math.PI)
-ctx.fillStyle="#ff0000"
-ctx.fill()
+}
+dot(256,224,0,0)
+dot(159,392,0,0)
+dot(353,392,0,0)
 }
 </script> 
